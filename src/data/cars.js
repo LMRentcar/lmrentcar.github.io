@@ -4,7 +4,7 @@ export const cars = [
     brand: 'FIAT',
     name: 'Panda',
     category: 'CITY CAR',
-    image: '/images/cars/licensed/fiat-panda.jpg',
+    image: (import.meta.env.BASE_URL + 'images/cars/licensed/fiat-panda.jpg'),
     description: 'Fiat Panda. Contattaci per informazioni, disponibilità e preventivi.',
     credit: {
       author: 'Harvey Bold',
@@ -18,7 +18,7 @@ export const cars = [
     brand: 'FIAT',
     name: '500X',
     category: 'CROSSOVER',
-    image: '/images/cars/licensed/fiat-500x.jpg',
+    image: (import.meta.env.BASE_URL + 'images/cars/licensed/fiat-500x.jpg'),
     description: 'Fiat 500X. Contattaci per informazioni, disponibilità e preventivi.',
     credit: {
       author: 'Pava',
@@ -32,7 +32,7 @@ export const cars = [
   brand: "SMART",
   name: "Fortwo 453 Nera",
   category: "CITY CAR",
-  image: "/images/cars/licensed/smart-fortwo-black-453.jpg",
+  image: (import.meta.env.BASE_URL + 'images/cars/licensed/smart-fortwo-black-453.jpg'),
   description: "SMART Fortwo 453 Nera. Fotografia illustrativa. Contattaci per disponibilità e preventivi.",
   credit: {
     author: "Damian B Oh",
@@ -46,7 +46,7 @@ export const cars = [
     brand: "FIAT",
     name: "500",
     category: "CITY CAR",
-    image: "/images/cars/licensed/fiat-500-white.jpg",
+    image: (import.meta.env.BASE_URL + 'images/cars/licensed/fiat-500-white.jpg'),
     description: "Fiat 500 bianca, modello restyling. Contattaci per informazioni, disponibilità e preventivi.",
     credit: {
       author: "MercurySable99",
@@ -60,7 +60,7 @@ export const cars = [
   brand: "SMART",
   name: "Fortwo 453 Grigia",
   category: "CITY CAR",
-  image: "/images/cars/licensed/smart-fortwo-grey-453.jpg",
+  image: (import.meta.env.BASE_URL + 'images/cars/licensed/smart-fortwo-grey-453.jpg'),
   description: "SMART Fortwo 453 Grigia. Fotografia illustrativa. Contattaci per disponibilità e preventivi.",
   credit: {
     author: "Harvey Bold",
@@ -74,7 +74,7 @@ export const cars = [
   brand: "AUDI",
   name: "Q3 Bianca",
   category: "SUV",
-  image: "/images/cars/licensed/audi-q3-white.jpg",
+  image: (import.meta.env.BASE_URL + 'images/cars/licensed/audi-q3-white.jpg'),
   description: "AUDI Q3 Bianca 2015. Fotografia illustrativa. Contattaci per disponibilità e preventivi.",
   credit: {
     author: "Thomas doerfer",
