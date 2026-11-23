@@ -34,7 +34,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="footer-contact"
           >
-            CONTATTACI <ArrowUpRight size={22}/>
+            CONTATTACI <ArrowUpRight size={22} color="#c9a45c"/>
           </a>
         </div>
       </div>

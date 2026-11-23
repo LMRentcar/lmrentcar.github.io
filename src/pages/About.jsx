@@ -64,7 +64,7 @@ export default function About() {
             rel="noopener noreferrer"
             className="btn btn-gold"
           >
-            PARLA CON NOI <ArrowUpRight size={18}/>
+            PARLA CON NOI <ArrowUpRight size={18} color="#c9a45c"/>
           </a>
         </div>
       </section>

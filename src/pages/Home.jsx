@@ -27,17 +27,23 @@ export default function Home() {
 
             <div className="hero-actions">
               <Link to="/flotta" className="btn btn-gold">
-                ESPLORA LA FLOTTA <ArrowUpRight size={18}/>
+                ESPLORA LA FLOTTA <ArrowUpRight size={18} color="#c9a45c"/>
               </Link>
               <Link to="/contatti" className="btn btn-outline">
                 RICHIEDI PREVENTIVO
+                <ArrowUpRight
+                  size={18}
+                  color="#c9a45c"
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
               </Link>
             </div>
           </motion.div>
         </div>
 
         <a href="#flotta" className="scroll-hint">
-          SCOPRI DI PIÙ <ArrowDown size={17}/>
+          SCOPRI DI PIÙ <ArrowDown size={17} color="#c9a45c"/>
         </a>
 
         <div className="hero-index">01 / 04</div>
@@ -60,7 +66,7 @@ export default function Home() {
             <h2>LA NOSTRA <em>FLOTTA.</em></h2>
           </div>
           <Link to="/flotta" className="text-link">
-            VEDI TUTTE LE AUTO <ArrowUpRight size={18}/>
+            VEDI TUTTE LE AUTO <ArrowUpRight size={18} color="#c9a45c"/>
           </Link>
         </div>
 
@@ -85,7 +91,7 @@ export default function Home() {
           <h2 className="lm-experience-title"><span className="lm-title-words"><span>IL</span><span>LUSSO</span><span>DI</span></span><br/><em>ANDARE OLTRE.</em></h2>
           <p>La strada è tua. Scegli come viverla.</p>
           <Link to="/servizi" className="btn btn-gold">
-            SCOPRI DI PIÙ <ArrowUpRight size={18}/>
+            SCOPRI DI PIÙ <ArrowUpRight size={18} color="#c9a45c"/>
           </Link>
         </div>
       </section>
@@ -124,7 +130,7 @@ export default function Home() {
         <p className="eyebrow">YOUR NEXT JOURNEY STARTS HERE</p>
         <h2>PRONTO A <em>PARTIRE?</em></h2>
         <Link to="/contatti" className="btn btn-gold">
-          RICHIEDI UN PREVENTIVO <ArrowUpRight size={18}/>
+          RICHIEDI UN PREVENTIVO <ArrowUpRight size={18} color="#c9a45c"/>
         </Link>
       </section>
     </>

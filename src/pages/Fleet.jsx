@@ -60,7 +60,7 @@ export default function Fleet() {
           rel="noopener noreferrer"
           className="btn btn-gold"
         >
-          CHIEDI DISPONIBILITÀ <ArrowUpRight size={18}/>
+          CHIEDI DISPONIBILITÀ <ArrowUpRight size={18} color="#c9a45c"/>
         </a>
       </section>
 

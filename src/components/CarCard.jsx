@@ -30,7 +30,7 @@ export default function CarCard({ car }) {
 
         <div className="luxury-car-actions">
           <Link to={`/auto/${car.id}`} className="text-link">
-            SCOPRI L'AUTO <ArrowUpRight size={17}/>
+            SCOPRI L'AUTO <ArrowUpRight size={17} color="#c9a45c"/>
           </Link>
 
           <a

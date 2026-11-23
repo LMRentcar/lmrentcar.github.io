@@ -22,7 +22,7 @@ export default function CarDetails() {
     <main className="inner-page">
       <section className="car-detail-real section-pad">
         <Link to="/flotta" className="text-link">
-          <ArrowLeft size={18}/> TORNA ALLA FLOTTA
+          <ArrowLeft size={18} color="#c9a45c"/> TORNA ALLA FLOTTA
         </Link>
 
         <div className="car-detail-grid">
@@ -50,7 +50,7 @@ export default function CarDetails() {
               rel="noopener noreferrer"
               className="btn btn-gold"
             >
-              RICHIEDI PREVENTIVO <ArrowUpRight size={18}/>
+              RICHIEDI PREVENTIVO <ArrowUpRight size={18} color="#c9a45c"/>
             </a>
 
             <p className="car-credit">

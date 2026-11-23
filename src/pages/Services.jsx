@@ -67,7 +67,7 @@ export default function Services() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                RICHIEDI INFORMAZIONI <ArrowUpRight size={16}/>
+                RICHIEDI INFORMAZIONI <ArrowUpRight size={16} color="#c9a45c"/>
               </a>
             </article>
           ))}
@@ -78,7 +78,7 @@ export default function Services() {
         <h2>PRONTO A PARTIRE?</h2>
         <p>Contattaci per trovare la soluzione di noleggio più adatta a te.</p>
         <Link to="/flotta" className="lm-gold-button">
-          SCOPRI LA FLOTTA <ArrowUpRight size={18}/>
+          SCOPRI LA FLOTTA <ArrowUpRight size={18} color="#c9a45c"/>
         </Link>
       </section>
     </main>

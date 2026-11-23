@@ -60,7 +60,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="btn btn-gold"
           >
-            SCRIVICI SU WHATSAPP <ArrowUpRight size={18}/>
+            SCRIVICI SU WHATSAPP <ArrowUpRight size={18} color="#c9a45c"/>
           </a>
         </div>
 
@@ -164,7 +164,7 @@ export default function Contact() {
           </label>
 
           <button type="submit" className="btn btn-gold">
-            INVIA RICHIESTA SU WHATSAPP <ArrowUpRight size={18}/>
+            INVIA RICHIESTA SU WHATSAPP <ArrowUpRight size={18} color="#c9a45c"/>
           </button>
 
           <p className="lm-form-note">

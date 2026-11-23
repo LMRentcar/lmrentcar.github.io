@@ -2,7 +2,7 @@ import { useState as useInstallGuideState } from 'react'
 import InstallAppGuide from './InstallAppGuide'
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { Menu, X, ArrowUpRight, Download } from 'lucide-react'
 import Logo from './Logo'
 import { whatsappLink } from '../data/company'
 
@@ -56,7 +56,7 @@ export default function Navbar() {
             className="lm-install-menu-link"
             onClick={() => setLmInstallGuideOpen(true)}
           >
-            <span aria-hidden="true">↓</span> SCARICA APP
+            <Download size={17} color="#c9a45c" strokeWidth={2} aria-hidden="true" /> SCARICA APP
           </button>
 </nav>
 
@@ -66,7 +66,7 @@ export default function Navbar() {
         rel="noopener noreferrer"
         className="nav-cta"
       >
-        WHATSAPP <ArrowUpRight size={16}/>
+        WHATSAPP <ArrowUpRight size={16} color="#c9a45c"/>
       </a>
 
       <button
