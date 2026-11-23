@@ -1,16 +1,63 @@
-# React + Vite
+# L.M. RENT CAR
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Sito web ufficiale di L.M. RENT CAR.
 
-Currently, two official plugins are available:
+Servizio di noleggio auto a San Gennarello di Ottaviano,
+in provincia di Napoli.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Sito ufficiale
 
-## React Compiler
+https://lmrentcar.github.io/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funzionalità
 
-## Expanding the Oxlint configuration
+- Catalogo delle automobili disponibili
+- Schede dettagliate dei veicoli
+- Richiesta di informazioni e preventivi
+- Contatto tramite WhatsApp
+- Interfaccia responsive
+- Installazione come web app su dispositivi compatibili
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Tecnologie
+
+Il progetto utilizza:
+
+- React
+- Vite
+- React Router
+- Lucide React
+- CSS
+
+## Sviluppo locale
+
+Requisiti:
+
+- Node.js
+- npm
+
+Installazione delle dipendenze:
+
+    npm ci
+
+Avvio dell'ambiente di sviluppo:
+
+    npm run dev
+
+Compilazione:
+
+    npm run build
+
+## Pubblicazione
+
+Il sito viene distribuito tramite GitHub Pages.
+
+La pubblicazione è gestita attraverso GitHub Actions.
+
+## Informazioni
+
+L.M. RENT CAR
+
+San Gennarello di Ottaviano (NA)
+
+Sito ufficiale:
+https://lmrentcar.github.io/
