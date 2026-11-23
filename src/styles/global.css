@@ -1,0 +1,2218 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
+  background: #090909;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #090909;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+img { display: block; max-width: 100%; }
+
+::selection { background: #c9a45c; color: #080808; }
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1, h2, h3 {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1, h2 {
+  letter-spacing: -0.065em;
+  font-weight: 800;
+}
+
+h1 em, h2 em {
+  font-style: normal;
+  color: #c9a45c;
+}
+
+.navbar {
+  height: 88px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+  background: rgba(0,0,0,.32);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  min-width: 140px;
+}
+
+.brand-main {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -.08em;
+}
+
+.brand-sub {
+  color: #c9a45c;
+  font-size: 9px;
+  letter-spacing: .48em;
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #d3d3d3;
+  font-size: 12px;
+  font-weight: 700;
+  transition: color .25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: #c9a45c; }
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #c9a45c;
+  color: #c9a45c;
+  padding: 14px 19px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  transition: .25s;
+}
+
+.nav-cta:hover {
+  background: #c9a45c;
+  color: #080808;
+}
+
+.menu-toggle, .nav-mobile-cta { display: none; }
+
+.hero {
+  height: min(900px, 100svh);
+  min-height: 650px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background:
+    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=2200&q=90')
+    center 54% / cover no-repeat;
+  animation: heroZoom 16s ease-out both;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.75) 35%, rgba(0,0,0,.13) 100%),
+    linear-gradient(0deg, #090909 0%, transparent 28%, rgba(0,0,0,.22) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 90px 8% 0;
+}
+
+.eyebrow {
+  color: #c9a45c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .26em;
+  margin-bottom: 26px;
+}
+
+.gold-line {
+  display: inline-block;
+  width: 35px;
+  height: 1px;
+  background: #c9a45c;
+  vertical-align: middle;
+  margin-right: 13px;
+}
+
+.hero h1 {
+  font-size: clamp(60px, 7.4vw, 125px);
+  line-height: 1.02;
+  margin-bottom: 28px;
+}
+
+.hero-description {
+  max-width: 470px;
+  color: #c7c7c7;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 35px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  min-height: 53px;
+  padding: 16px 25px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  transition: .25s ease;
+}
+
+.btn-gold {
+  background: #c9a45c;
+  color: #080808;
+  border: 1px solid #c9a45c;
+}
+
+.btn-gold:hover {
+  background: #e4c580;
+  border-color: #e4c580;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,.5);
+  color: #fff;
+}
+
+.btn-outline:hover {
+  border-color: #c9a45c;
+  color: #c9a45c;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 55px;
+  left: 8%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #ddd;
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+
+.hero-index {
+  position: absolute;
+  bottom: 55px;
+  right: 8%;
+  z-index: 3;
+  color: #c9a45c;
+  font-size: 12px;
+  letter-spacing: .2em;
+}
+
+.section-pad { padding: 110px 8%; }
+
+.intro {
+  text-align: center;
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.intro h2 {
+  font-size: clamp(35px, 5vw, 70px);
+  line-height: 1.15;
+}
+
+.intro > p:last-child {
+  color: #999;
+  max-width: 590px;
+  margin: 25px auto 0;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.centered { text-align: center; }
+
+.fleet-section { background: #101010; }
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: clamp(35px, 4vw, 65px);
+  margin-bottom: 0;
+}
+
+.text-link {
+  color: #c9a45c;
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  padding-bottom: 9px;
+}
+
+.demo-notice {
+  color: #a7a7a7;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.car-card {
+  background: #191919;
+  border: 1px solid #292929;
+  overflow: hidden;
+  transition: border-color .3s;
+}
+
+.car-card:hover { border-color: #80683d; }
+
+.car-image {
+  height: 245px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: #222;
+}
+
+.car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s;
+}
+
+.car-card:hover .car-image img { transform: scale(1.07); }
+
+.car-category {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #c9a45c;
+  color: #090909;
+  padding: 8px 12px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.car-content { padding: 26px; }
+
+.car-brand {
+  color: #c9a45c;
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.car-content h3 {
+  font-size: 25px;
+  letter-spacing: -.04em;
+  margin-bottom: 23px;
+}
+
+.car-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding: 19px 0;
+}
+
+.car-specs span {
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.car-specs svg { color: #c9a45c; }
+
+.car-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  color: #c9a45c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.experience-banner {
+  min-height: 580px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background:
+    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=2000&q=85')
+    center / cover;
+}
+
+.experience-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #000 0%, rgba(0,0,0,.75) 42%, rgba(0,0,0,.25) 100%);
+}
+
+.experience-content {
+  position: relative;
+  padding: 100px 8%;
+}
+
+.experience-content h2 {
+  font-size: clamp(48px, 6vw, 90px);
+  line-height: 1.07;
+}
+
+.experience-content > p:not(.eyebrow) {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.values { background: #090909; }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.value-card {
+  padding: 45px 35px;
+  background: #151515;
+  border: 1px solid #292929;
+  min-height: 260px;
+}
+
+.value-card svg {
+  color: #c9a45c;
+  margin-bottom: 35px;
+}
+
+.value-card > span {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.value-card h3 {
+  font-size: 22px;
+  letter-spacing: -.03em;
+}
+
+.value-card p {
+  color: #999;
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+.final-cta {
+  text-align: center;
+  padding: 110px 20px;
+  background: #151515;
+  border-top: 1px solid #292929;
+}
+
+.final-cta h2 {
+  font-size: clamp(40px, 6vw, 85px);
+  margin-bottom: 35px;
+}
+
+.footer {
+  background: #050505;
+  padding: 75px 8% 25px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 35px;
+  padding-bottom: 75px;
+}
+
+.footer-logo {
+  font-size: 37px;
+  font-weight: 800;
+  letter-spacing: -.07em;
+}
+
+.footer-logo span {
+  color: #c9a45c;
+  font-size: 13px;
+  letter-spacing: .1em;
+}
+
+.footer-top p {
+  color: #888;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links a {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.footer-links a:hover { color: #c9a45c; }
+
+.footer-contact {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: #c9a45c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #292929;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #666;
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+.inner-page { padding-top: 88px; }
+
+.page-heading {
+  padding: 115px 8% 95px;
+  background:
+    radial-gradient(ellipse at 80% 20%, #292218 0%, transparent 50%),
+    #101010;
+  border-bottom: 1px solid #292929;
+}
+
+.page-heading h1 {
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: 1.1;
+  margin-bottom: 22px;
+}
+
+.page-heading > p:last-child {
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.filter {
+  padding: 12px 22px;
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #333;
+  font-size: 12px;
+}
+
+.filter.active, .filter:hover {
+  background: #c9a45c;
+  border-color: #c9a45c;
+  color: #090909;
+}
+
+.detail-layout {
+  min-height: 750px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+}
+
+.detail-image {
+  min-height: 650px;
+  background: #191919;
+}
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-info {
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.back-link {
+  color: #aaa;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 11px;
+  margin-bottom: 65px;
+}
+
+.detail-info h1 {
+  font-size: clamp(50px, 5vw, 85px);
+  line-height: 1.05;
+}
+
+.gold-divider {
+  width: 65px;
+  height: 2px;
+  background: #c9a45c;
+  margin: 20px 0 30px;
+}
+
+.detail-description {
+  color: #aaa;
+  line-height: 1.9;
+}
+
+.detail-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin: 30px 0;
+}
+
+.detail-specs div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.detail-specs svg { color: #c9a45c; }
+
+.detail-specs span {
+  color: #888;
+  font-size: 10px;
+}
+
+.detail-specs strong { font-size: 13px; }
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8%;
+  align-items: center;
+}
+
+.about-image {
+  min-height: 570px;
+  background:
+    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=85')
+    center / cover;
+}
+
+.about-text h2,
+.contact-layout h2 {
+  font-size: clamp(40px, 4vw, 65px);
+  line-height: 1.1;
+}
+
+.about-text > p:not(.eyebrow),
+.contact-description {
+  color: #aaa;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+}
+
+.contact-card {
+  background: #171717;
+  padding: 45px;
+  border: 1px solid #303030;
+}
+
+.contact-row {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #333;
+  padding: 22px 0;
+}
+
+.contact-row svg { color: #c9a45c; }
+
+.contact-row strong {
+  font-size: 12px;
+  letter-spacing: .1em;
+}
+
+.contact-row p {
+  color: #999;
+  margin: 10px 0 0;
+  font-size: 13px;
+}
+
+.contact-card .btn { margin-top: 35px; }
+
+@media (max-width: 1100px) {
+  .nav-links { gap: 18px; }
+  .navbar { padding: 0 4%; }
+  .nav-cta { display: none; }
+  .cars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .navbar { height: 74px; padding: 0 6%; }
+
+  .brand-main { font-size: 28px; }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #fff;
+    border: 0;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    padding: 30px 6%;
+    background: #111;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: 15px 0;
+    font-size: 15px;
+  }
+
+  .nav-mobile-cta {
+    display: block !important;
+    color: #c9a45c !important;
+  }
+
+  .hero {
+    min-height: 700px;
+    height: 92svh;
+  }
+
+  .hero-image { background-position: 61% center; }
+
+  .hero-shade {
+    background:
+      linear-gradient(90deg, rgba(0,0,0,.84), rgba(0,0,0,.28)),
+      linear-gradient(0deg, #090909, transparent 45%);
+  }
+
+  .hero-content { padding: 50px 7% 0; }
+
+  .hero h1 {
+    font-size: clamp(46px, 11vw, 75px);
+  }
+
+  .hero-description { font-size: 13px; }
+
+  .hero-actions { flex-direction: column; align-items: start; }
+
+  .scroll-hint { left: 7%; bottom: 30px; }
+
+  .hero-index { right: 7%; bottom: 30px; }
+
+  .section-pad { padding: 75px 6%; }
+
+  .intro { padding: 90px 6%; }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .cars-grid { grid-template-columns: 1fr; }
+
+  .car-image { height: 270px; }
+
+  .values-grid { grid-template-columns: 1fr; }
+
+  .value-card { min-height: auto; }
+
+  .experience-banner { min-height: 520px; }
+
+  .experience-content { padding: 75px 6%; }
+
+  .footer { padding: 65px 6% 25px; }
+
+  .footer-top { flex-direction: column; padding-bottom: 45px; }
+
+  .footer-bottom { flex-direction: column; gap: 10px; }
+
+  .inner-page { padding-top: 74px; }
+
+  .page-heading { padding: 80px 6%; }
+
+  .detail-layout { grid-template-columns: 1fr; }
+
+  .detail-image { min-height: 350px; height: 400px; }
+
+  .detail-info { padding: 60px 6%; }
+
+  .back-link { margin-bottom: 40px; }
+
+  .about-layout, .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-image { min-height: 350px; }
+
+  .contact-card { padding: 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* L.M. RENT CAR - BRAND UPDATE 2.0 */
+
+.luxury-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 145px;
+  line-height: 1;
+  text-align: center;
+}
+
+.luxury-logo-script {
+  font-family: 'Brush Script MT', 'Snell Roundhand', cursive;
+  font-size: 37px;
+  font-weight: 500;
+  font-style: italic;
+  color: #d7ae62;
+  text-shadow: 0 1px 12px rgba(201,164,92,.2);
+}
+
+.luxury-logo-name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  color: #d7ae62;
+  margin-top: 2px;
+}
+
+.luxury-logo-tagline {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 8px;
+  color: #d7ae62;
+  letter-spacing: .02em;
+  margin-top: 5px;
+}
+
+.whatsapp-floating {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 61px;
+  height: 61px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  box-shadow: 0 8px 30px rgba(0,0,0,.35);
+  transition: transform .25s;
+}
+
+.whatsapp-floating:hover {
+  transform: scale(1.1);
+}
+
+.maps-section {
+  padding: 70px 8% 110px;
+  background: #101010;
+}
+
+.maps-section iframe {
+  filter: grayscale(1) invert(.9) contrast(.9);
+  border: 1px solid #333 !important;
+}
+
+.contact-row {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.contact-row:hover strong {
+  color: #c9a45c;
+}
+
+@media (max-width: 760px) {
+  .luxury-logo {
+    min-width: 110px;
+  }
+
+  .luxury-logo-script {
+    font-size: 30px;
+  }
+
+  .luxury-logo-name {
+    font-size: 10px;
+  }
+
+  .luxury-logo-tagline {
+    font-size: 7px;
+  }
+
+  .whatsapp-floating {
+    width: 55px;
+    height: 55px;
+    right: 17px;
+    bottom: 17px;
+  }
+
+  .maps-section {
+    padding: 65px 6%;
+  }
+}
+
+/* CATALOGO REALE L.M. RENT CAR */
+
+.real-car-card {
+  background: #171717;
+  border: 1px solid rgba(215,174,98,.14);
+  overflow: hidden;
+  transition: transform .3s, border-color .3s;
+}
+
+.real-car-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(215,174,98,.55);
+}
+
+.real-car-image {
+  display: block;
+  height: 310px;
+  overflow: hidden;
+  background: #222;
+}
+
+.real-car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.real-car-card:hover img {
+  transform: scale(1.045);
+}
+
+.real-car-info {
+  padding: 28px;
+}
+
+.real-car-info h3 {
+  margin: 10px 0;
+  font-size: 26px;
+}
+
+.real-car-info > p:not(.eyebrow) {
+  color: #aaa;
+  margin-bottom: 22px;
+}
+
+.fleet-disclaimer {
+  color: #999;
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.showroom-gallery {
+  background: #111;
+}
+
+.showroom-gallery h2 {
+  margin: 15px 0 35px;
+}
+
+.showroom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.showroom-grid img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.car-detail-grid,
+.about-real {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.car-detail-grid {
+  margin-top: 45px;
+}
+
+.car-detail-photo img,
+.about-real-photo img {
+  width: 100%;
+  max-height: 650px;
+  object-fit: cover;
+}
+
+.car-detail-copy h1 {
+  font-size: clamp(40px, 5vw, 75px);
+  margin: 15px 0 25px;
+}
+
+.car-detail-copy > p:not(.eyebrow),
+.about-real-copy p:not(.eyebrow) {
+  color: #aaa;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+.about-real-copy h2 {
+  margin: 15px 0 25px;
+}
+
+@media(max-width: 800px) {
+  .showroom-grid,
+  .car-detail-grid,
+  .about-real {
+    grid-template-columns: 1fr;
+  }
+
+  .showroom-grid img {
+    height: 250px;
+  }
+
+  .real-car-image {
+    height: 280px;
+  }
+
+  .car-detail-grid,
+  .about-real {
+    gap: 30px;
+  }
+}
+
+/* L.M. RENT CAR — CATALOGO 4.0 */
+
+.luxury-car-card {
+  background: linear-gradient(155deg, #202020, #111);
+}
+
+.luxury-car-card .real-car-image {
+  position: relative;
+  height: 340px;
+}
+
+.luxury-car-card .real-car-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.car-photo-badge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  padding: 8px 12px;
+  background: rgba(0,0,0,.76);
+  color: #eee;
+  font-size: 9px;
+  letter-spacing: .12em;
+}
+
+.luxury-car-card h3 span {
+  color: #d7ae62;
+}
+
+.luxury-car-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.luxury-wa-link {
+  border: 1px solid #d7ae62;
+  padding: 11px 14px;
+  color: #d7ae62;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.luxury-wa-link:hover {
+  background: #d7ae62;
+  color: #111;
+}
+
+.photo-disclaimer,
+.car-credit {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 15px;
+}
+
+.car-credit a,
+.photo-credits-list a {
+  color: #d7ae62;
+}
+
+.photo-credits-section {
+  background: #0c0c0c;
+}
+
+.photo-credits-section > p:not(.eyebrow) {
+  color: #aaa;
+  max-width: 700px;
+  line-height: 1.8;
+  margin: 18px 0 30px;
+}
+
+.photo-credits-list {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.photo-credits-list p {
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+@media(max-width: 800px) {
+  .luxury-car-card .real-car-image {
+    height: 270px;
+  }
+}
+
+/* L.M. RENT CAR — SERVIZI PREMIUM */
+.lm-services-hero {
+  padding: 120px 8% 85px;
+  background: linear-gradient(135deg, #171717, #080808);
+}
+
+.lm-services-hero h1 {
+  font-size: clamp(42px, 6vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  margin: 22px 0;
+}
+
+.lm-services-hero h1 span {
+  color: #d7ae62;
+}
+
+.lm-services-hero > p:last-child {
+  max-width: 620px;
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.lm-services-section {
+  padding: 90px 8%;
+  background: #0c0c0c;
+}
+
+.lm-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.lm-service-card {
+  padding: 38px 30px;
+  border: 1px solid #303030;
+  background: linear-gradient(145deg, #1b1b1b, #101010);
+  transition: transform .3s ease, border-color .3s ease;
+}
+
+.lm-service-card:hover {
+  transform: translateY(-6px);
+  border-color: #d7ae62;
+}
+
+.lm-service-card > svg {
+  color: #d7ae62;
+  margin-bottom: 28px;
+}
+
+.lm-service-card h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.lm-service-card p {
+  color: #aaa;
+  line-height: 1.8;
+  min-height: 90px;
+}
+
+.lm-service-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #d7ae62;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin-top: 20px;
+}
+
+.lm-services-cta {
+  padding: 90px 8%;
+  text-align: center;
+  background: #171717;
+}
+
+.lm-services-cta h2 {
+  font-size: clamp(30px, 4vw, 54px);
+}
+
+.lm-services-cta p {
+  color: #aaa;
+  margin: 20px 0 35px;
+}
+
+.lm-gold-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 26px;
+  background: #d7ae62;
+  color: #111;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .lm-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .lm-services-hero {
+    padding: 90px 6% 60px;
+  }
+
+  .lm-services-section {
+    padding: 60px 6%;
+  }
+
+  .lm-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lm-service-card p {
+    min-height: auto;
+  }
+}
+
+/* L.M. RENT CAR — ABOUT, PREVENTIVI E FOOTER */
+
+.lm-about-values {
+  background: #101010;
+}
+
+.lm-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.lm-value-card {
+  padding: 36px 30px;
+  background: linear-gradient(145deg, #1c1c1c, #111);
+  border: 1px solid #303030;
+  transition: transform .3s ease, border-color .3s ease;
+}
+
+.lm-value-card:hover {
+  transform: translateY(-5px);
+  border-color: #d7ae62;
+}
+
+.lm-value-card svg {
+  color: #d7ae62;
+  margin-bottom: 25px;
+}
+
+.lm-value-card h3 {
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+
+.lm-value-card p {
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.lm-quote-section {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 70px;
+  background: #111;
+  align-items: start;
+}
+
+.lm-quote-intro h2 {
+  font-size: clamp(32px, 4vw, 60px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.lm-quote-intro > p:last-child {
+  color: #aaa;
+  line-height: 1.8;
+  max-width: 450px;
+}
+
+.lm-quote-form {
+  display: grid;
+  gap: 22px;
+  padding: 38px;
+  background: #191919;
+  border: 1px solid #353535;
+}
+
+.lm-quote-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #d7ae62;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.lm-quote-form input,
+.lm-quote-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #393939;
+  background: #101010;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  letter-spacing: normal;
+  outline: none;
+  border-radius: 0;
+}
+
+.lm-quote-form input:focus,
+.lm-quote-form textarea:focus {
+  border-color: #d7ae62;
+}
+
+.lm-form-dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.lm-quote-form button {
+  cursor: pointer;
+  border: 0;
+  justify-content: center;
+}
+
+.lm-form-note {
+  color: #888;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.lm-footer-brand > p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lm-footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.lm-footer-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.lm-footer-contact a:hover {
+  color: #d7ae62;
+}
+
+@media (max-width: 900px) {
+  .lm-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lm-quote-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lm-quote-form {
+    padding: 24px 18px;
+  }
+
+  .lm-form-dates {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Correzione spaziatura titolo Home */
+.hero h1 {
+  letter-spacing: 0.01em;
+  word-spacing: 0.12em;
+}
+
+
+/* HOME — Correzione spaziatura parole */
+.hero h1 {
+  word-spacing: 0.35em !important;
+  letter-spacing: 0.015em !important;
+}
+
+
+/* Spaziatura corretta IL LUSSO DI */
+.lm-title-words {
+  display: inline-flex;
+  gap: 0.28em;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .lm-title-words {
+    gap: 0.18em;
+  }
+}
+
+
+/* LM PREMIUM FLEET V2 */
+
+.lm-premium-car {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(202, 166, 91, 0.24);
+  border-radius: 16px;
+  background: #151515;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.lm-premium-car:hover {
+  transform: translateY(-7px);
+  border-color: rgba(202, 166, 91, 0.7);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.38);
+}
+
+.lm-premium-car .real-car-image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #202020;
+}
+
+.lm-premium-car .real-car-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.lm-premium-car:hover .real-car-image img {
+  transform: scale(1.055);
+}
+
+.lm-premium-car .real-car-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 26px;
+}
+
+.lm-premium-car .real-car-info h3 {
+  margin-top: 10px;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.lm-premium-car .luxury-car-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.lm-premium-car .luxury-wa-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid #caa65b;
+  border-radius: 5px;
+  color: #caa65b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.lm-premium-car .luxury-wa-link:hover {
+  background: #caa65b;
+  color: #111;
+}
+
+.fleet-section .cars-grid,
+.cars-grid {
+  align-items: stretch;
+}
+
+@media (max-width: 700px) {
+  .lm-premium-car .real-car-info {
+    padding: 22px;
+  }
+
+  .lm-premium-car .luxury-car-actions {
+    gap: 14px;
+  }
+
+  .lm-premium-car .real-car-image {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lm-premium-car,
+  .lm-premium-car .real-car-image img,
+  .lm-premium-car .luxury-wa-link {
+    transition: none;
+  }
+}
+
+
+/* L.M. RENT CAR — TARIFFE INDICATIVE V1 */
+
+.lm-rates {
+  padding: clamp(75px, 8vw, 125px) 5%;
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(202, 166, 91, 0.09),
+      transparent 60%
+    ),
+    #0b0b0b;
+  color: #f5f2eb;
+}
+
+.lm-rates-heading {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.lm-rates-heading h2 {
+  margin: 12px 0 18px;
+  font-size: clamp(35px, 5vw, 64px);
+  line-height: 1.1;
+}
+
+.lm-rates-heading h2 em {
+  color: #caa65b;
+}
+
+.lm-rates-heading > p:last-child {
+  color: #b7b3aa;
+  line-height: 1.8;
+}
+
+.lm-rates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.lm-rate-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(25px, 3vw, 40px);
+  border: 1px solid rgba(202, 166, 91, 0.25);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.lm-rate-card:hover {
+  transform: translateY(-6px);
+  border-color: #caa65b;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
+}
+
+.lm-rate-label {
+  color: #caa65b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.lm-rate-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  margin: 27px 0 8px;
+}
+
+.lm-rate-prefix {
+  color: #caa65b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.lm-rate-price strong {
+  color: #fff;
+  font-size: clamp(36px, 4vw, 55px);
+  line-height: 1;
+}
+
+.lm-rate-suffix {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.lm-rate-range {
+  color: #e1c486;
+  font-size: 13px;
+}
+
+.lm-rate-description {
+  flex: 1;
+  margin: 25px 0 30px;
+  color: #b7b3aa;
+  line-height: 1.7;
+}
+
+.lm-rate-button {
+  display: block;
+  padding: 16px 18px;
+  border-radius: 5px;
+  background: #caa65b;
+  color: #111;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.lm-rate-button:hover {
+  background: #e6c784;
+}
+
+.lm-rates-disclaimer {
+  max-width: 1000px;
+  margin: 34px auto 0;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .lm-rates-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lm-rates {
+    padding: 70px 20px;
+  }
+
+  .lm-rate-card {
+    padding: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lm-rate-card,
+  .lm-rate-button {
+    transition: none;
+  }
+}
+
+
+/* LM RENT CAR - PREZZI AUTO V1 */
+
+.lm-car-price {
+  margin: 22px 0 28px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(202, 166, 91, 0.25);
+  border-bottom: 1px solid rgba(202, 166, 91, 0.25);
+}
+
+.lm-car-price-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #caa65b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.lm-car-price-amount {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lm-car-price-amount strong {
+  color: #e2bd70;
+  font-size: clamp(32px, 3.5vw, 45px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.lm-car-price-amount span {
+  color: #eee;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.lm-car-price p {
+  margin: 12px 0 0;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .lm-car-price {
+    margin: 18px 0 24px;
+  }
+
+  .lm-car-price-amount strong {
+    font-size: 36px;
+  }
+}
+
+
+/* GIFRA - DEVELOPER CREDIT */
+
+.gifra-developer-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  width: 100%;
+  margin-top: 30px;
+  padding: 22px 15px 8px;
+  border-top: 1px solid rgba(202, 166, 91, 0.18);
+  color: #888;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-align: center;
+}
+
+.gifra-developer-credit strong {
+  color: #caa65b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  transition: color 0.25s ease;
+}
+
+.gifra-developer-credit strong:hover {
+  color: #f0d69b;
+}
+
+@media (max-width: 600px) {
+  .gifra-developer-credit {
+    gap: 6px;
+    font-size: 9px;
+    line-height: 1.8;
+  }
+
+  .gifra-developer-credit strong {
+    font-size: 11px;
+  }
+}
+
+
+/* LM RENT CAR - GUIDA SCARICA APP V1 */
+
+.lm-install-menu-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid rgba(202,166,91,.55);
+  border-radius: 4px;
+  background: rgba(202,166,91,.09);
+  color: #e4bf73;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.lm-install-menu-link:hover {
+  background: #caa65b;
+  color: #111;
+}
+
+.lm-install-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0,0,0,.88);
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+}
+
+.lm-install-modal {
+  position: relative;
+  width: min(100%, 530px);
+  max-height: calc(100dvh - 36px);
+  overflow-y: auto;
+  padding: 35px;
+  border: 1px solid rgba(202,166,91,.35);
+  border-radius: 12px;
+  background: #111;
+  color: #f5f5f5;
+  box-shadow: 0 24px 80px rgba(0,0,0,.6);
+}
+
+.lm-install-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  border: 0;
+  background: transparent;
+  color: #ddd;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.lm-install-icon {
+  color: #caa65b;
+  font-size: 35px;
+}
+
+.lm-install-eyebrow,
+.lm-install-device {
+  color: #caa65b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.lm-install-modal h2 {
+  margin: 10px 0 14px;
+  font-size: clamp(25px, 5vw, 35px);
+  line-height: 1.15;
+}
+
+.lm-install-modal h2 span {
+  color: #caa65b;
+}
+
+.lm-install-intro {
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.lm-install-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.lm-install-tabs button {
+  padding: 13px 8px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background: #1b1b1b;
+  color: #ccc;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lm-install-tabs button.active {
+  border-color: #caa65b;
+  background: #caa65b;
+  color: #111;
+}
+
+.lm-install-steps {
+  margin-top: 15px;
+}
+
+.lm-install-steps > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  padding: 14px 0;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+.lm-install-steps b {
+  color: #caa65b;
+  font-size: 18px;
+}
+
+.lm-install-steps p {
+  margin: 0;
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.lm-install-steps strong {
+  color: #fff;
+}
+
+.lm-install-note {
+  margin: 23px 0;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.lm-install-done {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  border-radius: 5px;
+  background: #caa65b;
+  color: #111;
+  font-weight: 900;
+  letter-spacing: .1em;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .lm-install-modal {
+    padding: 26px 20px;
+  }
+
+  .lm-install-menu-link {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+
+/* LM RENT CAR - POSIZIONE LOGO MOBILE */
+@media (max-width: 768px) {
+  .luxury-logo {
+    position: relative;
+    top: 6px;
+  }
+}
+/* FINE POSIZIONE LOGO MOBILE */
+
+
+/* LM RENT CAR - LOGO NITIDO IPHONE V2 */
+@media (max-width: 768px) {
+
+  .navbar {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: rgba(9, 9, 9, 0.96) !important;
+  }
+
+  .luxury-logo {
+    position: relative;
+    top: 6px;
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
+  }
+
+  .luxury-logo-script,
+  .luxury-logo-name,
+  .luxury-logo-tagline {
+    text-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+
+/* LM RENT CAR - HEADER IPHONE APP V3 */
+@media (max-width: 768px) and (display-mode: standalone) {
+  .navbar {
+    top: 20px !important;
+  }
+
+  .luxury-logo {
+    top: 0 !important;
+  }
+}
+/* FINE HEADER IPHONE APP V3 */
+
+
+/* LM RENT CAR - TOP IPHONE NERO V1 */
+@media (max-width: 768px) {
+  html {
+    background-color: #000 !important;
+  }
+
+  body {
+    background-color: #000;
+  }
+
+  .navbar {
+    background: #000 !important;
+    background-color: #000 !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* Riempie di nero la fascia superiore nella modalità app */
+@media (max-width: 768px) and (display-mode: standalone) {
+  html {
+    background: #000 !important;
+  }
+
+  .navbar {
+    top: 0 !important;
+    padding-top: max(20px, env(safe-area-inset-top)) !important;
+    background: #000 !important;
+  }
+}
+
+
+/* LM RENT CAR - HEADER IPHONE +6PX V4 */
+@media (max-width: 768px) and (display-mode: standalone) {
+  .navbar {
+    padding-top: calc(max(20px, env(safe-area-inset-top)) - 6px) !important;
+    background: #000 !important;
+  }
+}
+/* FINE HEADER IPHONE +6PX V4 */
+
+
+/* LM RENT CAR - BARRA NERA +10PX */
+@media (max-width: 768px) and (display-mode: standalone) {
+  .navbar {
+    padding-bottom: calc(10px + var(--lm-navbar-bottom-original, 0px)) !important;
+    background: #000 !important;
+  }
+}
+
+
+/* LM RENT CAR - SPLASH SCREEN V1 */
+
+.lm-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100dvh;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #000;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  overflow: hidden;
+}
+
+.lm-splash::before {
+  content: "";
+  position: absolute;
+  inset: -100px;
+  background: #000;
+  z-index: -1;
+}
+
+.lm-splash-closing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lm-splash-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.lm-splash-logo {
+  display: block;
+  width: min(78vw, 340px);
+  max-height: 65dvh;
+  height: auto;
+  object-fit: contain;
+  animation: lmSplashAppear 1.2s ease both;
+}
+
+@keyframes lmSplashAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lm-splash-logo {
+    animation: none;
+  }
+
+  .lm-splash {
+    transition: none;
+  }
+}
