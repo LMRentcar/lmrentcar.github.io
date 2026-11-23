@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
-import { whatsappLink } from '../data/company'
 
 export default function CarCard({ car }) {
   return (
@@ -33,16 +32,7 @@ export default function CarCard({ car }) {
             SCOPRI L'AUTO <ArrowUpRight size={17} color="#c9a45c"/>
           </Link>
 
-          <a
-            href={whatsappLink(
-              `Buongiorno, vorrei un preventivo per ${car.brand} ${car.name}.`
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="luxury-wa-link"
-          >
-            WHATSAPP ↗
-          </a>
+
         </div>
       </div>
     </article>
