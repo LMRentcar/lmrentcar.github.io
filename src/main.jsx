@@ -8,3 +8,10 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
+
+
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.getElementById('lm-boot-screen')?.remove()
+  })
+})
