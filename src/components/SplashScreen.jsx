@@ -36,10 +36,29 @@ export default function SplashScreen() {
     >
       <div className="lm-splash-content">
         <img
-          src="/lm-rent-car-app-512.png"
+          src={`${import.meta.env.BASE_URL}lm-rent-car-app-512.png`}
           alt="L.M. RENT CAR"
           className="lm-splash-logo"
+          onError={(event) => {
+            event.currentTarget.style.display = 'none'
+            event.currentTarget.nextElementSibling.style.display = 'block'
+          }}
         />
+        <div
+          className="lm-splash-fallback"
+          style={{
+            display: 'none',
+            color: '#d4af37',
+            textAlign: 'center',
+            fontFamily: 'serif',
+            fontSize: '32px',
+            fontWeight: 'bold',
+            letterSpacing: '2px'
+          }}
+        >
+          L.M.<br />
+          RENT CAR
+        </div>
       </div>
     </div>
   )
