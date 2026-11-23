@@ -2186,26 +2186,34 @@ a.contact-row:hover strong {
   width: 100%;
 }
 
+
 .lm-splash-logo {
   display: block;
   width: min(78vw, 340px);
   max-height: 65dvh;
   height: auto;
   object-fit: contain;
-  animation: lmSplashAppear 1.2s ease both;
+
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  animation: lmSplashAppear 1.8s
+    cubic-bezier(0.42, 0, 0.58, 1) both;
 }
 
 @keyframes lmSplashAppear {
-  from {
-    opacity: 0;
-    transform: scale(0.94);
+  0% {
+    opacity: 1;
+    transform: scale(0.45);
   }
 
-  to {
+  100% {
     opacity: 1;
     transform: scale(1);
   }
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   .lm-splash-logo {
