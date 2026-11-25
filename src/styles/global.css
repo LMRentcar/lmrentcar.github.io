@@ -918,7 +918,7 @@ h1 em, h2 em {
 }
 
 .maps-section iframe {
-  filter: grayscale(1) invert(.9) contrast(.9);
+  filter: none;
   border: 1px solid #333 !important;
 }
 

@@ -1,11 +1,18 @@
+import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowUpRight } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { cars } from '../data/cars'
 import { whatsappLink } from '../data/company'
 
 export default function CarDetails() {
   const { id } = useParams()
   const car = cars.find(item => item.id === id)
+  const [photoIndex, setPhotoIndex] = useState(0)
+  const photos = car?.images?.length ? car.images : car?.image ? [car.image] : []
+
+  useEffect(() => {
+    setPhotoIndex(0)
+  }, [id])
 
   if (!car) {
     return (
@@ -27,10 +34,38 @@ export default function CarDetails() {
 
         <div className="car-detail-grid">
           <div className="car-detail-photo">
-            <img
-              src={car.image}
-              alt={`${car.brand} ${car.name} - foto illustrativa`}
-            />
+            <div style={{ position: 'relative' }}>
+              <img
+                src={photos[photoIndex]}
+                alt={`${car.brand} ${car.name} - foto ${photoIndex + 1}`}
+              />
+
+              {photos.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    aria-label="Foto precedente"
+                    onClick={() => setPhotoIndex(i => (i - 1 + photos.length) % photos.length)}
+                    style={{ position: 'absolute', left: 12, top: '45%', width: 34, height: 34, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 0, borderRadius: 8, background: 'rgba(15,15,15,0.55)', color: '#e4c68c', border: '1px solid rgba(201,164,92,0.45)', cursor: 'pointer', backdropFilter: 'blur(4px)' }}
+                  >
+                    <ChevronLeft size={17} strokeWidth={1.5} />
+                  </button>
+
+                  <button
+                    type="button"
+                    aria-label="Foto successiva"
+                    onClick={() => setPhotoIndex(i => (i + 1) % photos.length)}
+                    style={{ position: 'absolute', right: 12, top: '45%', width: 34, height: 34, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 0, borderRadius: 8, background: 'rgba(15,15,15,0.55)', color: '#e4c68c', border: '1px solid rgba(201,164,92,0.45)', cursor: 'pointer', backdropFilter: 'blur(4px)' }}
+                  >
+                    <ChevronRight size={17} strokeWidth={1.5} />
+                  </button>
+
+                  <div style={{ textAlign: 'center', marginTop: 10 }}>
+                    {photoIndex + 1} / {photos.length}
+                  </div>
+                </>
+              )}
+            </div>
             <p className="photo-disclaimer">
               Immagine illustrativa del modello.
               La vettura effettiva può differire.
@@ -54,9 +89,9 @@ export default function CarDetails() {
             </a>
 
             <p className="car-credit">
-              Foto: {car.credit.author} · {car.credit.license} ·{' '}
+              Foto: {car.credit?.author || "Foto L.M. Rent Car"} · {car.credit?.license || "Foto del veicolo"} ·{' '}
               <a
-                href={car.credit.source}
+                href={car.credit?.source || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -64,7 +99,7 @@ export default function CarDetails() {
               </a>
               {' · '}
               <a
-                href={car.credit.licenseUrl}
+                href={car.credit?.licenseUrl || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -20,9 +20,9 @@ export default function CarCard({ car }) {
           <span className="lm-car-price-label">A PARTIRE DA</span>
           <div className="lm-car-price-amount">
             <strong>
-              {['fiat-500x', 'audi-q3'].includes(car.id) ? '50' : '30'} €
+              {car.priceFrom ?? 30} €
             </strong>
-            <span>/ GIORNO</span>
+            <span>{car.priceLabel?.includes('/mese') ? '/ MESE' : '/ GIORNO'}</span>
           </div>
           <p>Prezzo indicativo · Preventivo personalizzato</p>
         </div>

@@ -1,0 +1,319 @@
+/* LM RENT CAR — Preventivo WhatsApp */
+
+.lm-quote-trigger {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid rgba(201,164,92,.7);
+  border-radius: 8px;
+  background: rgba(15,15,15,.95);
+  color: #e8c98d;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 8px 26px rgba(0,0,0,.25);
+  transition: background .2s, transform .2s;
+}
+
+.lm-quote-trigger:hover {
+  background: #242018;
+  transform: translateY(-2px);
+}
+
+.lm-quote-trigger:focus-visible,
+.lm-quote-modal button:focus-visible,
+.lm-quote-modal input:focus-visible,
+.lm-quote-modal select:focus-visible,
+.lm-quote-modal textarea:focus-visible {
+  outline: 2px solid #c9a45c;
+  outline-offset: 3px;
+}
+
+.lm-quote-dot {
+  width: 8px;
+  height: 8px;
+  background: #36b878;
+  border-radius: 50%;
+}
+
+.lm-quote-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0,0,0,.82);
+  overflow-y: auto;
+}
+
+.lm-quote-modal {
+  width: 100%;
+  max-width: 520px;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  padding: 26px;
+  background: #141414;
+  color: #f5f1e9;
+  border: 1px solid rgba(201,164,92,.45);
+  border-radius: 14px;
+  box-shadow: 0 20px 70px rgba(0,0,0,.45);
+}
+
+.lm-quote-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lm-quote-header p {
+  color: #c9a45c;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin: 0 0 8px;
+}
+
+.lm-quote-header h2 {
+  color: #fff;
+  font-size: clamp(22px, 4vw, 30px);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.lm-quote-header h2 em {
+  color: #c9a45c;
+}
+
+.lm-quote-close {
+  flex: 0 0 44px;
+  height: 44px;
+  border: 1px solid #49433a;
+  border-radius: 8px;
+  background: #202020;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.lm-quote-intro {
+  margin: 18px 0 24px;
+  color: #c7c2b9;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.lm-quote-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lm-quote-modal label {
+  display: block;
+  margin-top: 5px;
+  color: #d9c5a0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.lm-quote-modal input,
+.lm-quote-modal select,
+.lm-quote-modal textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 12px;
+  background: #202020;
+  color: #fff;
+  border: 1px solid #49433a;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.lm-quote-modal textarea {
+  resize: vertical;
+}
+
+.lm-quote-fields {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: 12px;
+}
+
+.lm-quote-fields > div {
+  min-width: 0;
+}
+
+.lm-quote-fields label {
+  margin-bottom: 10px;
+}
+
+.lm-quote-selected {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid rgba(201,164,92,.3);
+  border-radius: 8px;
+  background: rgba(201,164,92,.07);
+}
+
+.lm-quote-selected strong {
+  color: #fff;
+}
+
+.lm-quote-selected span {
+  color: #e4c68c;
+  font-weight: 700;
+}
+
+.lm-quote-selected small {
+  color: #c5c0b6;
+}
+
+.lm-quote-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 50px;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #c9a45c;
+  border-radius: 8px;
+  background: #c9a45c;
+  color: #111;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  cursor: pointer;
+}
+
+.lm-quote-submit:hover {
+  background: #e2bd76;
+}
+
+.lm-quote-disclaimer {
+  margin: 2px 0 0;
+  color: #a9a39a;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.lm-quote-error {
+  color: #ff9a9a;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Ottimizzazioni responsive */
+
+@media (max-width: 768px) {
+  .cars-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 14px;
+  }
+
+  .real-car-card,
+  .luxury-car-card {
+    min-width: 0;
+  }
+
+  .real-car-image {
+    display: block;
+    overflow: hidden;
+  }
+
+  .real-car-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .real-car-info {
+    padding: 14px;
+  }
+
+  .real-car-info h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .lm-car-price-amount {
+    flex-wrap: wrap;
+  }
+
+  .lm-quote-trigger {
+    right: 12px;
+    bottom: 14px;
+    max-width: calc(100vw - 24px);
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 10px;
+  }
+
+  .lm-quote-modal {
+    padding: 20px;
+    max-height: calc(100dvh - 24px);
+  }
+
+  .lm-quote-overlay {
+    padding: 12px;
+  }
+
+  .showroom-grid img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .section-pad,
+  .page-heading {
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 540px) {
+  .cars-grid {
+    grid-template-columns: minmax(0,1fr);
+    gap: 22px;
+  }
+
+  .lm-quote-fields {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .lm-quote-modal {
+    padding: 16px;
+  }
+
+  .lm-quote-header h2 {
+    font-size: 23px;
+  }
+
+  .real-car-info {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lm-quote-trigger {
+    transition: none;
+  }
+}

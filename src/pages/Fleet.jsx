@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import './FleetFilters.css'
 import IndicativeRates from '../components/IndicativeRates'
 import CarCard from '../components/CarCard'
 import { cars } from '../data/cars'
@@ -5,6 +7,65 @@ import { whatsappLink } from '../data/company'
 import { ArrowUpRight } from 'lucide-react'
 
 export default function Fleet() {
+  const [category, setCategory] = useState('TUTTE')
+
+  const isMonthly = car =>
+    String(car.priceLabel || '').toLowerCase().includes('/mese')
+
+  function getCategory(car) {
+    const original = String(car.category || '').toUpperCase()
+    const brand = String(car.brand || '').toUpperCase()
+    const name = String(car.name || '').toUpperCase()
+
+    if (name.includes('AVENGER') || name.includes('500X')) {
+      return 'CITY CAR'
+    }
+
+    if (original.includes('SCOOTER') || brand === 'HONDA') {
+      return 'SCOOTER'
+    }
+
+    if (brand.includes('MERCEDES')) {
+      return 'PREMIUM'
+    }
+
+    if (
+      original.includes('SUV') ||
+      brand === 'JEEP' ||
+      brand === 'JAECOO' ||
+      name.includes('AVENGER') ||
+      name.includes('500X') ||
+      name.includes('TONALE')
+    ) {
+      return 'SUV'
+    }
+
+    if (original.includes('CITY') || brand === 'TOYOTA') {
+      return 'CITY CAR'
+    }
+
+    if (original.includes('PREMIUM')) {
+      return 'PREMIUM'
+    }
+
+    return 'ALTRI'
+  }
+
+  const filteredByRental = cars
+
+  const availableCategories = [
+    'TUTTE',
+    ...['CITY CAR', 'SUV', 'PREMIUM', 'SCOOTER', 'ALTRI'].filter(
+      item => filteredByRental.some(
+        car => getCategory(car) === item
+      )
+    )
+  ]
+
+  const visibleCars = filteredByRental.filter(car =>
+    category === 'TUTTE' || getCategory(car) === category
+  )
+
   return (
     <main className="inner-page">
       <section className="page-heading">
@@ -14,9 +75,44 @@ export default function Fleet() {
       </section>
 
       <section className="section-pad">
-        <div className="cars-grid">
-          {cars.map(car => <CarCard key={car.id} car={car}/>)}
+        <div className="lm-fleet-filters">
+          <p className="lm-filter-label">
+            ESPLORA LA NOSTRA FLOTTA
+          </p>
+
+          <div className="lm-category-filters">
+            {availableCategories.map(item => (
+              <button
+                type="button"
+                key={item}
+                className={category === item ? 'active' : ''}
+                aria-pressed={category === item}
+                onClick={() => setCategory(item)}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+
+          <p className="lm-fleet-count" aria-live="polite">
+            {visibleCars.length}
+            {visibleCars.length === 1
+              ? ' VEICOLO DISPONIBILE NEL CATALOGO'
+              : ' VEICOLI NEL CATALOGO'}
+          </p>
         </div>
+
+        <div className="cars-grid">
+          {visibleCars.map(car => (
+            <CarCard key={car.id} car={car}/>
+          ))}
+        </div>
+
+        {visibleCars.length === 0 && (
+          <p className="lm-fleet-empty">
+            Nessun veicolo in questa categoria.
+          </p>
+        )}
 
         <p className="fleet-disclaimer">
           Le fotografie sono illustrative dei modelli e non
@@ -78,10 +174,10 @@ export default function Fleet() {
             <p key={car.id}>
               <strong>{car.brand} {car.name}</strong>
               {' — '}
-              {car.credit.author}
+              {car.credit?.author || "Foto L.M. Rent Car"}
               {' · '}
               <a
-                href={car.credit.source}
+                href={car.credit?.source || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -89,11 +185,11 @@ export default function Fleet() {
               </a>
               {' · '}
               <a
-                href={car.credit.licenseUrl}
+                href={car.credit?.licenseUrl || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {car.credit.license}
+                {car.credit?.license || "Foto del veicolo"}
               </a>
               {' · '}
               Ritaglio automatico di visualizzazione.
